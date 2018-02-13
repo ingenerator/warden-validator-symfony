@@ -20,12 +20,54 @@ This isn't in packagist yet : you'll need to add our package repository to your 
 
 `$> composer require ingenerator/warden-validator-symfony`
 
-To use annotation-based validation mapping (which is defined by default in the warden
-base entities) you will need to also require `doctrine/annotations` and configure this 
-in your validation builder.
+## Using annotation based mapping
 
-Alternatively, you can define yaml or other validation mapping and register that as 
-required.
+The warden-core package defines validation mapping by default with annotations on the 
+various entity and request objects. To use these, you need to configure annotation mapping.
+
+To create a validator with annotation support, require the `doctrine/annotations` composer
+package.
+
+Then create a factory method like:
+
+```php
+use Doctrine\Common\Annotations\AnnotationRegistry;
+use Symfony\Component\Validator\Validation;
+use Symfony\Component\Validator\Mapping\Cache\CacheInterface;
+
+class ValidatorFactory
+{
+  /**
+   * @return \Symfony\Component\Validator\Validator\ValidatorInterface
+   */
+  public static function buildSymfonyValidator(CacheInterface $cache) 
+  {
+     // The Doctrine annotation loader does not by default autoload because some PSR-0 autoloaders are badly behaved
+     // and emit warnings/output/errors when a class can't be found. If yours doesn't, it's safe to just use 
+     // class_exists as a global autoloader.
+     AnnotationRegistry::registerLoader(function ($class) { return class_exists($class); });
+     $builder = Validation::createValidatorBuilder();
+     $builder->enableAnnotationMapping();
+     
+     if ($cache) {
+       $builder->setMetadataCache($cache);
+     }
+     
+     return $builder->getValidator();
+  }
+  
+  public static function buildWardenValidator(ValidatorInterface $sf_validator)
+  {
+    return new SymfonyValidator($sf_validator);
+  }
+}
+```
+
+## Using alternate mapping
+
+If you want to use an alternate validation mapping method (e.g. yaml files / xml files) you will
+need to define the appropriate mappings based on the constraints specified in the warden class
+annotations, and populate your validation builder appropriately.
 
 # Contributing
 
