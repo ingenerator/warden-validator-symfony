@@ -1,4 +1,4 @@
-This provides the default validation interface for [ingenerator/warden-core], based on
+This provides the default validation interface for ingenerator/warden-core, based on
 symfony validator.
 
 **Warden is under heavy development and not recommended for production use outwith inGenerator.**
