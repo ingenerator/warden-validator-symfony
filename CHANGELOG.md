@@ -1,5 +1,8 @@
 ### Unreleased
 
+### v0.1.2 (2018-09-26)
+
+* Now also supports 0.3 series of warden-core
 
 ### v0.1.1 (2018-03-13)
 
