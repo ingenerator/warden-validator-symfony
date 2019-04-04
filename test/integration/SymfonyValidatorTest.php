@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Yaml\Yaml;
 
-class SymfonyValidatorTest extends \PHPUnit_Framework_TestCase
+class SymfonyValidatorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var string
