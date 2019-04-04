@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Yaml\Yaml;
 
-class SymfonyValidatorTest extends \PHPUnit_Framework_TestCase
+class SymfonyValidatorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var string
@@ -53,8 +53,8 @@ class SymfonyValidatorTest extends \PHPUnit_Framework_TestCase
 
     public static function setUpBeforeClass()
     {
-        static::$yaml_mapping_file = sys_get_temp_dir().'/test-mapping.yaml';
-        file_put_contents(
+        static::$yaml_mapping_file = \sys_get_temp_dir().'/test-mapping.yaml';
+        \file_put_contents(
             static::$yaml_mapping_file,
             Yaml::dump(
                 [
@@ -76,7 +76,7 @@ class SymfonyValidatorTest extends \PHPUnit_Framework_TestCase
 
     public static function teardownAfterClass()
     {
-        unlink(static::$yaml_mapping_file);
+        \unlink(static::$yaml_mapping_file);
     }
 
 }

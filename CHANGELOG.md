@@ -1,5 +1,10 @@
 ### Unreleased
 
+### v1.0.0 (2019-04-04)
+
+* Ensure support for php7.2
+* Drop support for php5
+
 ### v0.1.2 (2018-09-26)
 
 * Now also supports 0.3 series of warden-core
