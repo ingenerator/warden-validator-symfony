@@ -3,9 +3,6 @@ symfony validator.
 
 **Warden is under heavy development and not recommended for production use outwith inGenerator.**
 
-[![Build Status](https://travis-ci.org/ingenerator/warden-validator-symfony.svg?branch=0.1.x)](https://travis-ci.org/ingenerator/warden-validator-symfony)
-
-
 # Installing warden-validator-symfony
 
 This isn't in packagist yet : you'll need to add our package repository to your composer.json:
