@@ -18,7 +18,7 @@
   ],
   "require": {
     "php": "^7.4",
-    "symfony/validator": "^3.0",
+    "symfony/validator": "^3.4",
     "ingenerator/warden-core": "^1.1"
   },
   "require-dev": {
