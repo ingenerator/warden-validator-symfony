@@ -51,7 +51,7 @@ class SymfonyValidatorTest extends \PHPUnit\Framework\TestCase
         return new SymfonyValidator($builder->getValidator());
     }
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         static::$yaml_mapping_file = \sys_get_temp_dir().'/test-mapping.yaml';
         \file_put_contents(
@@ -74,7 +74,7 @@ class SymfonyValidatorTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public static function teardownAfterClass()
+    public static function teardownAfterClass(): void
     {
         \unlink(static::$yaml_mapping_file);
     }
