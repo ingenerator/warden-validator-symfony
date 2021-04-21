@@ -8,9 +8,6 @@
          convertWarningsToExceptions="true"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
   <testsuites>
-    <testsuite name="Unit Tests">
-      <directory>test/unit</directory>
-    </testsuite>
     <testsuite name="Integration Tests">
       <directory>test/integration</directory>
     </testsuite>
