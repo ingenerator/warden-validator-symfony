@@ -1,5 +1,7 @@
 ### Unreleased
 
+* Require egulias/email-validator to facilitate strict mode email validation
+
 ### v1.2.0 (2022-10-17)
 
 * Support PHP 8.1 and PHP 8.2
