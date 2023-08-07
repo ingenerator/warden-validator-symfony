@@ -1,5 +1,9 @@
 ### Unreleased
 
+### v1.2.2 (2023-08-07)
+
+* Additionally support egulias/email-validator ^v4.0
+
 ### v1.2.1 (2022-10-24)
 
 * Require egulias/email-validator to facilitate strict mode email validation
